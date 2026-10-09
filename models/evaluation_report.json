@@ -1,0 +1,363 @@
+{
+  "timestamp": "2026-10-09T08:46:53Z",
+  "dataset_source": "GBIF Open Biodiversity Data (iNaturalist research-grade observations)",
+  "license": "Creative Commons (CC-BY / CC0 / CC BY-NC)",
+  "species_model": {
+    "classes": [
+      "carp",
+      "catfish",
+      "milkfish",
+      "pangasius",
+      "tilapia"
+    ],
+    "feature_count": 1280,
+    "metrics": {
+      "selected_model": "EfficientNet-B0 (Transfer 1280-dim)",
+      "selection_rationale": "Selected EfficientNet-B0 (Transfer 1280-dim) based on highest 5-fold group cross-validation Macro F1 (0.6309 vs baseline 0.3595, statistically defensible improvement of +0.2714).",
+      "architecture": "EfficientNet-B0 Pretrained CNN Transfer Learning",
+      "candidate_cv_benchmarks": {
+        "HistGradientBoosting (Baseline 75-dim)": {
+          "mean_accuracy": 0.36533333333333334,
+          "std_accuracy": 0.02745501370929867,
+          "mean_macro_f1": 0.35952464348770874,
+          "std_macro_f1": 0.02121155148709125,
+          "mean_fit_time_sec": 0.7077525799861177,
+          "infer_ms_per_sample": 0.08000426646322012,
+          "model_size_mb": 0.8,
+          "fold_accuracies": [
+            0.37333333333333335,
+            0.3333333333333333,
+            0.36,
+            0.41333333333333333,
+            0.3466666666666667
+          ],
+          "fold_macro_f1s": [
+            0.3492967032967033,
+            0.34046320346320347,
+            0.3631594027033404,
+            0.3991792634148875,
+            0.34552464456040893
+          ]
+        },
+        "MobileNetV3-Small (Transfer 576-dim)": {
+          "mean_accuracy": 0.52,
+          "std_accuracy": 0.045411696975803745,
+          "mean_macro_f1": 0.5133012802253749,
+          "std_macro_f1": 0.04528146910638443,
+          "mean_fit_time_sec": 0.03004546002484858,
+          "infer_ms_per_sample": 0.006024533261855443,
+          "model_size_mb": 10.2,
+          "fold_accuracies": [
+            0.5733333333333334,
+            0.5733333333333334,
+            0.5066666666666667,
+            0.48,
+            0.4666666666666667
+          ],
+          "fold_macro_f1s": [
+            0.5631315492465563,
+            0.5627628083491462,
+            0.5163908736322529,
+            0.456108977080844,
+            0.4681121928180752
+          ]
+        },
+        "EfficientNet-B0 (Transfer 1280-dim)": {
+          "mean_accuracy": 0.64,
+          "std_accuracy": 0.0498887651569859,
+          "mean_macro_f1": 0.6309479425390241,
+          "std_macro_f1": 0.05256331065805668,
+          "mean_fit_time_sec": 0.029171139979735018,
+          "infer_ms_per_sample": 0.00726400005320708,
+          "model_size_mb": 20.5,
+          "fold_accuracies": [
+            0.7066666666666667,
+            0.6,
+            0.6933333333333334,
+            0.6133333333333333,
+            0.5866666666666667
+          ],
+          "fold_macro_f1s": [
+            0.6921207511217653,
+            0.6081826219757254,
+            0.6957979177334016,
+            0.5763557105492589,
+            0.5822827113149693
+          ]
+        }
+      },
+      "baseline_comparison": {
+        "baseline_model": "HistGradientBoosting (Phase 5 Handcrafted Features)",
+        "baseline_test_accuracy": 0.336,
+        "baseline_test_macro_f1": 0.3362529011604642,
+        "transfer_model": "EfficientNet-B0 (Phase 6 Transfer Learning)",
+        "transfer_test_accuracy": 0.68,
+        "transfer_test_macro_f1": 0.6734534097949172,
+        "accuracy_improvement": 0.34400000000000003,
+        "macro_f1_improvement": 0.337200508634453
+      },
+      "test_accuracy": 0.68,
+      "test_macro_f1": 0.6734534097949172,
+      "test_weighted_f1": 0.6734534097949171,
+      "sample_count_total": 500,
+      "sample_count_train": 375,
+      "sample_count_test": 125,
+      "classes": [
+        "carp",
+        "catfish",
+        "milkfish",
+        "pangasius",
+        "tilapia"
+      ],
+      "classification_report": {
+        "carp": {
+          "precision": 0.47368421052631576,
+          "recall": 0.36,
+          "f1-score": 0.4090909090909091,
+          "support": 25.0
+        },
+        "catfish": {
+          "precision": 0.5882352941176471,
+          "recall": 0.8,
+          "f1-score": 0.6779661016949152,
+          "support": 25.0
+        },
+        "milkfish": {
+          "precision": 0.7777777777777778,
+          "recall": 0.84,
+          "f1-score": 0.8076923076923077,
+          "support": 25.0
+        },
+        "pangasius": {
+          "precision": 0.8260869565217391,
+          "recall": 0.76,
+          "f1-score": 0.7916666666666666,
+          "support": 25.0
+        },
+        "tilapia": {
+          "precision": 0.7272727272727273,
+          "recall": 0.64,
+          "f1-score": 0.6808510638297872,
+          "support": 25.0
+        },
+        "accuracy": 0.68,
+        "macro avg": {
+          "precision": 0.6786113932432414,
+          "recall": 0.6799999999999999,
+          "f1-score": 0.6734534097949172,
+          "support": 125.0
+        },
+        "weighted avg": {
+          "precision": 0.6786113932432415,
+          "recall": 0.68,
+          "f1-score": 0.6734534097949171,
+          "support": 125.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          9,
+          6,
+          4,
+          2,
+          4
+        ],
+        [
+          2,
+          20,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          21,
+          0,
+          1
+        ],
+        [
+          1,
+          5,
+          0,
+          19,
+          0
+        ],
+        [
+          5,
+          2,
+          1,
+          1,
+          16
+        ]
+      ],
+      "partition_manifest": {
+        "train_sample_count": 375,
+        "test_sample_count": 125,
+        "test_files": [
+          "carp_002.jpg",
+          "carp_013.jpg",
+          "carp_016.jpg",
+          "carp_019.jpg",
+          "carp_020.jpg",
+          "carp_026.jpg",
+          "carp_032.jpg",
+          "carp_034.jpg",
+          "carp_038.jpg",
+          "carp_040.jpg",
+          "carp_041.jpg",
+          "carp_044.jpg",
+          "carp_045.jpg",
+          "carp_053.jpg",
+          "carp_055.jpg",
+          "carp_059.jpg",
+          "carp_061.jpg",
+          "carp_064.jpg",
+          "carp_065.jpg",
+          "carp_071.jpg",
+          "carp_079.jpg",
+          "carp_081.jpg",
+          "carp_086.jpg",
+          "carp_093.jpg",
+          "carp_097.jpg",
+          "catfish_001.jpg",
+          "catfish_002.jpg",
+          "catfish_008.jpg",
+          "catfish_013.jpg",
+          "catfish_015.jpg",
+          "catfish_018.jpg",
+          "catfish_021.jpg",
+          "catfish_027.jpg",
+          "catfish_030.jpg",
+          "catfish_038.jpg",
+          "catfish_039.jpg",
+          "catfish_044.jpg",
+          "catfish_047.jpg",
+          "catfish_051.jpg",
+          "catfish_058.jpg",
+          "catfish_060.jpg",
+          "catfish_062.jpg",
+          "catfish_063.jpg",
+          "catfish_066.jpg",
+          "catfish_069.jpg",
+          "catfish_078.jpg",
+          "catfish_085.jpg",
+          "catfish_086.jpg",
+          "catfish_088.jpg",
+          "catfish_094.jpg",
+          "milkfish_002.jpg",
+          "milkfish_004.jpg",
+          "milkfish_010.jpg",
+          "milkfish_011.jpg",
+          "milkfish_014.jpg",
+          "milkfish_017.jpg",
+          "milkfish_033.jpg",
+          "milkfish_034.jpg",
+          "milkfish_038.jpg",
+          "milkfish_041.jpg",
+          "milkfish_043.jpg",
+          "milkfish_044.jpg",
+          "milkfish_045.jpg",
+          "milkfish_046.jpg",
+          "milkfish_052.jpg",
+          "milkfish_055.jpg",
+          "milkfish_056.jpg",
+          "milkfish_058.jpg",
+          "milkfish_061.jpg",
+          "milkfish_062.jpg",
+          "milkfish_070.jpg",
+          "milkfish_078.jpg",
+          "milkfish_081.jpg",
+          "milkfish_093.jpg",
+          "milkfish_100.jpg",
+          "pangasius_001.jpg",
+          "pangasius_006.jpg",
+          "pangasius_009.jpg",
+          "pangasius_012.jpg",
+          "pangasius_013.jpg",
+          "pangasius_016.jpg",
+          "pangasius_017.jpg",
+          "pangasius_018.jpg",
+          "pangasius_019.jpg",
+          "pangasius_023.jpg",
+          "pangasius_024.jpg",
+          "pangasius_036.jpg",
+          "pangasius_038.jpg",
+          "pangasius_040.jpg",
+          "pangasius_042.jpg",
+          "pangasius_079.jpg",
+          "pangasius_081.jpg",
+          "pangasius_082.jpg",
+          "pangasius_084.jpg",
+          "pangasius_085.jpg",
+          "pangasius_088.jpg",
+          "pangasius_096.jpg",
+          "pangasius_097.jpg",
+          "pangasius_098.jpg",
+          "pangasius_099.jpg",
+          "tilapia_003.jpg",
+          "tilapia_004.jpg",
+          "tilapia_009.jpg",
+          "tilapia_010.jpg",
+          "tilapia_015.jpg",
+          "tilapia_016.jpg",
+          "tilapia_018.jpg",
+          "tilapia_020.jpg",
+          "tilapia_022.jpg",
+          "tilapia_025.jpg",
+          "tilapia_027.jpg",
+          "tilapia_028.jpg",
+          "tilapia_031.jpg",
+          "tilapia_036.jpg",
+          "tilapia_041.jpg",
+          "tilapia_045.jpg",
+          "tilapia_050.jpg",
+          "tilapia_067.jpg",
+          "tilapia_068.jpg",
+          "tilapia_070.jpg",
+          "tilapia_075.jpg",
+          "tilapia_079.jpg",
+          "tilapia_081.jpg",
+          "tilapia_082.jpg",
+          "tilapia_097.jpg"
+        ]
+      },
+      "leakage_audit": {
+        "split_type": "StratifiedGroupKFold (n_splits=4, random_state=42, 0 observer overlap)",
+        "unique_observers_total": 394,
+        "observer_overlap_count": 0,
+        "observation_id_integrity": "All 500 images have unique GBIF occurrence keys, verified URLs, and 0 duplicate visual hashes.",
+        "leakage_mitigation_finding": "Preserved exact 125-image held-out test set from Phase 5 using StratifiedGroupKFold on recorded_by metadata. Exactly 0 photographer/observer identifiers overlap between training/validation and the held-out test partition. Class balance was perfectly maintained at 25 images per class in the test set."
+      },
+      "uncertainty_audit": {
+        "breakdown": {
+          "CONFIDENT": {
+            "sample_count": 302,
+            "percentage": 80.5,
+            "empirical_accuracy": 0.7152,
+            "error_rate": 0.2848
+          },
+          "MARGINAL": {
+            "sample_count": 52,
+            "percentage": 13.9,
+            "empirical_accuracy": 0.3269,
+            "error_rate": 0.6731
+          },
+          "UNCERTAIN": {
+            "sample_count": 21,
+            "percentage": 5.6,
+            "empirical_accuracy": 0.3333,
+            "error_rate": 0.6667
+          }
+        },
+        "findings": "Empirical validation confirms that in the CONFIDENT tier (P >= 0.65, margin >= 0.25), the empirical accuracy improved to 71.5% (error rate: 28.5%). However, probabilities are not perfectly calibrated and must not be interpreted as absolute certainty. Under the 5-class closed-world scope, unsupported species or non-fish images will still be forced into one of the 5 categories."
+      }
+    }
+  },
+  "biomass_model": {
+    "metrics": {
+      "train_samples": 20,
+      "train_mae_kg": 0.00031369013595702324
+    }
+  }
+}

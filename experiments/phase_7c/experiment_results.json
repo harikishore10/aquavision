@@ -1,0 +1,374 @@
+{
+  "exp_a_baseline": {
+    "name": "Exp A: Baseline Frozen Features",
+    "mean_accuracy": 0.64,
+    "std_accuracy": 0.0498887651569859,
+    "mean_macro_f1": 0.6309479425390241,
+    "std_macro_f1": 0.05256331065805668,
+    "mean_carp_f1": 0.4848841481099545,
+    "std_carp_f1": 0.0869353322881928,
+    "mean_carp_recall": 0.48,
+    "total_time_sec": 0.5456187999807298,
+    "classification_report": {
+      "carp": {
+        "precision": 0.5,
+        "recall": 0.48,
+        "f1-score": 0.4897959183673469,
+        "support": 75.0
+      },
+      "catfish": {
+        "precision": 0.6785714285714286,
+        "recall": 0.76,
+        "f1-score": 0.7169811320754716,
+        "support": 75.0
+      },
+      "milkfish": {
+        "precision": 0.72,
+        "recall": 0.72,
+        "f1-score": 0.72,
+        "support": 75.0
+      },
+      "pangasius": {
+        "precision": 0.7361111111111112,
+        "recall": 0.7066666666666667,
+        "f1-score": 0.7210884353741497,
+        "support": 75.0
+      },
+      "tilapia": {
+        "precision": 0.5555555555555556,
+        "recall": 0.5333333333333333,
+        "f1-score": 0.54421768707483,
+        "support": 75.0
+      },
+      "accuracy": 0.64,
+      "macro avg": {
+        "precision": 0.6380476190476191,
+        "recall": 0.6399999999999999,
+        "f1-score": 0.6384166345783597,
+        "support": 375.0
+      },
+      "weighted avg": {
+        "precision": 0.6380476190476191,
+        "recall": 0.64,
+        "f1-score": 0.6384166345783596,
+        "support": 375.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        36,
+        7,
+        5,
+        8,
+        19
+      ],
+      [
+        5,
+        57,
+        4,
+        6,
+        3
+      ],
+      [
+        6,
+        4,
+        54,
+        3,
+        8
+      ],
+      [
+        8,
+        7,
+        5,
+        53,
+        2
+      ],
+      [
+        17,
+        9,
+        7,
+        2,
+        40
+      ]
+    ]
+  },
+  "exp_b_augmentation": {
+    "name": "Exp B: Training-Only Augmentation",
+    "mean_accuracy": 0.6533333333333333,
+    "std_accuracy": 0.07055336829505576,
+    "mean_macro_f1": 0.6476996659088938,
+    "std_macro_f1": 0.07413962361289873,
+    "mean_carp_f1": 0.5213506300462822,
+    "std_carp_f1": 0.08347321403558149,
+    "mean_carp_recall": 0.52,
+    "total_time_sec": 114.38137570000254,
+    "classification_report": {
+      "carp": {
+        "precision": 0.5131578947368421,
+        "recall": 0.52,
+        "f1-score": 0.5165562913907285,
+        "support": 75.0
+      },
+      "catfish": {
+        "precision": 0.7297297297297297,
+        "recall": 0.72,
+        "f1-score": 0.7248322147651006,
+        "support": 75.0
+      },
+      "milkfish": {
+        "precision": 0.7368421052631579,
+        "recall": 0.7466666666666667,
+        "f1-score": 0.7417218543046358,
+        "support": 75.0
+      },
+      "pangasius": {
+        "precision": 0.7333333333333333,
+        "recall": 0.7333333333333333,
+        "f1-score": 0.7333333333333333,
+        "support": 75.0
+      },
+      "tilapia": {
+        "precision": 0.5540540540540541,
+        "recall": 0.5466666666666666,
+        "f1-score": 0.5503355704697986,
+        "support": 75.0
+      },
+      "accuracy": 0.6533333333333333,
+      "macro avg": {
+        "precision": 0.6534234234234234,
+        "recall": 0.6533333333333333,
+        "f1-score": 0.6533558528527192,
+        "support": 375.0
+      },
+      "weighted avg": {
+        "precision": 0.6534234234234235,
+        "recall": 0.6533333333333333,
+        "f1-score": 0.6533558528527194,
+        "support": 375.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        39,
+        6,
+        6,
+        6,
+        18
+      ],
+      [
+        6,
+        54,
+        2,
+        8,
+        5
+      ],
+      [
+        6,
+        3,
+        56,
+        4,
+        6
+      ],
+      [
+        6,
+        5,
+        5,
+        55,
+        4
+      ],
+      [
+        19,
+        6,
+        7,
+        2,
+        41
+      ]
+    ]
+  },
+  "exp_c_class_weighted": {
+    "name": "Exp C: Class-Weighted (carp_emphasis)",
+    "mean_accuracy": 0.6453333333333333,
+    "std_accuracy": 0.05170858514577417,
+    "mean_macro_f1": 0.6359310270702323,
+    "std_macro_f1": 0.05360023137072224,
+    "mean_carp_f1": 0.49835858585858583,
+    "std_carp_f1": 0.10527880447054801,
+    "mean_carp_recall": 0.5066666666666666,
+    "total_time_sec": 0.6265844999579713,
+    "classification_report": {
+      "carp": {
+        "precision": 0.5066666666666667,
+        "recall": 0.5066666666666667,
+        "f1-score": 0.5066666666666667,
+        "support": 75.0
+      },
+      "catfish": {
+        "precision": 0.6867469879518072,
+        "recall": 0.76,
+        "f1-score": 0.7215189873417721,
+        "support": 75.0
+      },
+      "milkfish": {
+        "precision": 0.72,
+        "recall": 0.72,
+        "f1-score": 0.72,
+        "support": 75.0
+      },
+      "pangasius": {
+        "precision": 0.7464788732394366,
+        "recall": 0.7066666666666667,
+        "f1-score": 0.726027397260274,
+        "support": 75.0
+      },
+      "tilapia": {
+        "precision": 0.5633802816901409,
+        "recall": 0.5333333333333333,
+        "f1-score": 0.547945205479452,
+        "support": 75.0
+      },
+      "accuracy": 0.6453333333333333,
+      "macro avg": {
+        "precision": 0.6446545619096102,
+        "recall": 0.6453333333333333,
+        "f1-score": 0.644431651349633,
+        "support": 375.0
+      },
+      "weighted avg": {
+        "precision": 0.6446545619096103,
+        "recall": 0.6453333333333333,
+        "f1-score": 0.6444316513496329,
+        "support": 375.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        38,
+        6,
+        5,
+        8,
+        18
+      ],
+      [
+        5,
+        57,
+        4,
+        5,
+        4
+      ],
+      [
+        6,
+        4,
+        54,
+        3,
+        8
+      ],
+      [
+        9,
+        7,
+        5,
+        53,
+        1
+      ],
+      [
+        17,
+        9,
+        7,
+        2,
+        40
+      ]
+    ]
+  },
+  "exp_d_finetuning": {
+    "name": "Exp D: Fine-Tuning Upper Layers (features.7, features.8)",
+    "mean_accuracy": 0.4533333333333333,
+    "std_accuracy": 0.09276014469827247,
+    "mean_macro_f1": 0.4456203688293606,
+    "std_macro_f1": 0.09430741858053555,
+    "mean_carp_f1": 0.3372713308197179,
+    "std_carp_f1": 0.13281515910796432,
+    "mean_carp_recall": 0.3333333333333333,
+    "total_time_sec": 228.14434660004918,
+    "classification_report": {
+      "carp": {
+        "precision": 0.35714285714285715,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.3448275862068966,
+        "support": 75.0
+      },
+      "catfish": {
+        "precision": 0.40816326530612246,
+        "recall": 0.5333333333333333,
+        "f1-score": 0.4624277456647399,
+        "support": 75.0
+      },
+      "milkfish": {
+        "precision": 0.5432098765432098,
+        "recall": 0.5866666666666667,
+        "f1-score": 0.5641025641025641,
+        "support": 75.0
+      },
+      "pangasius": {
+        "precision": 0.4657534246575342,
+        "recall": 0.4533333333333333,
+        "f1-score": 0.4594594594594595,
+        "support": 75.0
+      },
+      "tilapia": {
+        "precision": 0.5094339622641509,
+        "recall": 0.36,
+        "f1-score": 0.421875,
+        "support": 75.0
+      },
+      "accuracy": 0.4533333333333333,
+      "macro avg": {
+        "precision": 0.45674067718277495,
+        "recall": 0.4533333333333333,
+        "f1-score": 0.450538471086732,
+        "support": 375.0
+      },
+      "weighted avg": {
+        "precision": 0.4567406771827749,
+        "recall": 0.4533333333333333,
+        "f1-score": 0.450538471086732,
+        "support": 375.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        25,
+        16,
+        8,
+        9,
+        17
+      ],
+      [
+        15,
+        40,
+        6,
+        14,
+        0
+      ],
+      [
+        4,
+        11,
+        44,
+        12,
+        4
+      ],
+      [
+        9,
+        20,
+        7,
+        34,
+        5
+      ],
+      [
+        17,
+        11,
+        16,
+        4,
+        27
+      ]
+    ]
+  }
+}

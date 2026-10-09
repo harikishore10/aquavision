@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fish-aquaculture-ai"
+version = "0.1.0"
+description = "ML prototype for fish species identification and biomass estimation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "scikit-learn>=1.5",
+  "pillow>=10.4",
+  "joblib>=1.4",
+  "streamlit>=1.37",
+  "matplotlib>=3.9",
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+  "requests>=2.32",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
