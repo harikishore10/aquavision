@@ -19,7 +19,7 @@ import requests
 
 SUPPORTED_FARM_SPECIES = ["tilapia", "catfish", "carp", "milkfish", "pangasius"]
 
-DEFAULT_GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
+DEFAULT_GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 GEMINI_API_URL_TEMPLATE = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
 

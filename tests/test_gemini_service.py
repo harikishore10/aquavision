@@ -129,8 +129,8 @@ class TestGeminiVisionService(unittest.TestCase):
     def test_default_model_and_endpoint(self, mock_post: MagicMock) -> None:
         from fishfarm_ai.gemini_service import DEFAULT_GEMINI_MODEL, GEMINI_API_URL_TEMPLATE
 
-        self.assertEqual(DEFAULT_GEMINI_MODEL, "gemini-3.5-flash-lite")
-        self.assertEqual(self.service.default_model, "gemini-3.5-flash-lite")
+        self.assertEqual(DEFAULT_GEMINI_MODEL, "gemini-3.8-flash")
+        self.assertEqual(self.service.default_model, "gemini-3.8-flash")
 
         mock_resp = MagicMock()
         mock_resp.status_code = 200
@@ -143,21 +143,21 @@ class TestGeminiVisionService(unittest.TestCase):
 
         mock_post.assert_called_once()
         called_url = mock_post.call_args[0][0]
-        expected_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=secret-test-key"
+        expected_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=secret-test-key"
         self.assertEqual(called_url, expected_url)
 
     @patch("requests.post")
     def test_model_not_found_404_handling(self, mock_post: MagicMock) -> None:
         mock_resp = MagicMock()
         mock_resp.status_code = 404
-        mock_resp.text = '{"error": {"code": 404, "message": "models/gemini-3.5-flash-lite is not found for API version v1beta"}}'
+        mock_resp.text = '{"error": {"code": 404, "message": "models/gemini-3.8-flash is not found for API version v1beta"}}'
         mock_post.return_value = mock_resp
 
         res = self.service.analyze_image(self.sample_img, api_key="test-api-key")
         self.assertEqual(res.status, "ERROR")
         self.assertFalse(res.is_success)
         self.assertIn("HTTP 404", res.error_message or "")
-        self.assertIn("gemini-3.5-flash-lite", res.error_message or "")
+        self.assertIn("gemini-3.8-flash", res.error_message or "")
 
 
 if __name__ == "__main__":
