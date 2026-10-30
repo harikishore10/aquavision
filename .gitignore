@@ -23,6 +23,7 @@ venv.bak/
 
 # Streamlit secrets (allow config.toml for dark theme)
 .streamlit/secrets.toml
+!.streamlit/secrets.toml.example
 
 # Testing & linting caches
 .pytest_cache/
@@ -38,8 +39,33 @@ desktop.ini
 .vscode/
 .idea/
 
-# Large ML model binaries (trained via python train.py)
-models/*.joblib
+# Large ML model binaries
 models/*.pt
 models/*.onnx
-!models/evaluation_report.json
+!models/species_model.joblib
+!models/biomass_model.joblib
+!models/evaluation_report.json
+
+# Local report drafts, college PDFs and docx generation scripts
+*.pdf
+*.docx
+Plagiarism Checker report/
+S5 mini project mine documents/
+s5 mini project documents/
+publications/
+report/
+apply_mine_documents_to_report.py
+build_docx_report.py
+build_full_report.py
+build_pdf_report.py
+calibrate_toc.py
+chapter_*.py
+chapters_*.py
+export_report_to_md.py
+generate_aquavision_report.py
+rebuild_all_reports.py
+report_text.py
+update_docx_front_matter.py
+scripts/calibrate_all.py
+scripts/generate_future_stack_figures.py
+scripts/scan_headings.py

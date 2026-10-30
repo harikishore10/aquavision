@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -189,7 +190,12 @@ if "backend_signed_in" not in st.session_state:
 
 st.sidebar.markdown("### AquaVision Control")
 execution_mode = st.sidebar.radio("Run predictions using", ["Local services", "Backend API"], index=0)
-backend_url = st.sidebar.text_input("Backend URL", value="http://127.0.0.1:8000")
+default_backend_url = os.getenv("AQUAVISION_BACKEND_URL", "")
+if not default_backend_url and hasattr(st, "secrets") and "AQUAVISION_BACKEND_URL" in st.secrets:
+    default_backend_url = str(st.secrets["AQUAVISION_BACKEND_URL"]).strip()
+if not default_backend_url:
+    default_backend_url = "http://127.0.0.1:8000"
+backend_url = st.sidebar.text_input("Backend URL", value=default_backend_url)
 username = st.sidebar.text_input("Username", value="admin")
 password = st.sidebar.text_input("Password", value="", type="password")
 
@@ -916,8 +922,8 @@ elif mode == "Documentation & Model Evaluation":
     st.markdown("---")
     st.markdown("### Execution Command")
     st.code(
-        r'& "C:\Users\senth\AppData\Local\Programs\Python\Python312\python.exe" -m streamlit run app.py',
-        language="powershell",
+        "streamlit run app.py",
+        language="bash",
     )
 
 st.markdown("---")

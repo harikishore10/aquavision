@@ -70,6 +70,26 @@ class GeminiVisionService:
 
         return None
 
+    @classmethod
+    def get_model_name(cls, explicit_model: str | None = None) -> str:
+        """Retrieve model name from explicit parameter, environment, or Streamlit secrets."""
+        if explicit_model and explicit_model.strip():
+            return explicit_model.strip()
+
+        env_model = os.getenv("GEMINI_MODEL", "").strip()
+        if env_model:
+            return env_model
+
+        try:
+            import streamlit as st
+
+            if hasattr(st, "secrets") and "GEMINI_MODEL" in st.secrets:
+                return str(st.secrets["GEMINI_MODEL"]).strip()
+        except Exception:
+            pass
+
+        return DEFAULT_GEMINI_MODEL
+
     def is_available(self, explicit_key: str | None = None) -> bool:
         """Check if an API key is configured."""
         return self.get_api_key(explicit_key) is not None
@@ -101,7 +121,7 @@ class GeminiVisionService:
                 error_message="Assessment API key is not configured. Set the GEMINI_API_KEY environment variable or enter it in the sidebar.",
             )
 
-        selected_model = model or self.default_model
+        selected_model = self.get_model_name(model or (self.default_model if self.default_model != DEFAULT_GEMINI_MODEL else None))
         url = f"{GEMINI_API_URL_TEMPLATE.format(model=selected_model)}?key={resolved_key}"
 
         try:
